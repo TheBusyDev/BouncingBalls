@@ -17,9 +17,12 @@ void loadIcons ()
     ballIcon[i].loadPixels ();
     
     // draw ball RGB color randomly
-    r = rand.nextInt (256);
-    g = rand.nextInt (256);
-    b = rand.nextInt (256);
+    do
+    {
+      r = rand.nextInt (256);
+      g = rand.nextInt (256);
+      b = rand.nextInt (256);
+    } while (r == R_BG && g == G_BG && b == B_BG);
     
     // generate ball icon
     for (x=0; x <= MAX_DIM; x++)

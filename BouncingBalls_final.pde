@@ -2,10 +2,11 @@ import java.util.Random;
 Random rand = new Random ();
 
 final int FPS = 60;
-final int BALLS_NUM = 6*FPS;
-final int ICONS_NUM = 50;
+final int BALLS_NUM = 10*FPS;
+final int ICONS_NUM = BALLS_NUM/10;
+final int R_BG = 60, G_BG = 240, B_BG = 240; // RGB background color
+final color BG = color (R_BG, G_BG, B_BG); // background color
 final float DECREASE_ALPHA = (float) 255/(5*FPS); // each ball is visible for 5 seconds
-final color BG = color (60, 240, 240); // background color
 int MIN_DIM, MAX_DIM, MAX_SPEED;
 
 Ball[] ball = new Ball[BALLS_NUM];
@@ -16,8 +17,8 @@ int len=0; // 'len' = 'visibleBalls' size
 
 void setup ()
 {
-  //size (400, 700, P2D);
-  fullScreen (P2D);
+  size (900, 900, P2D);
+  //fullScreen (P2D);
   orientation (PORTRAIT);
   background (BG);
   frameRate (FPS);
